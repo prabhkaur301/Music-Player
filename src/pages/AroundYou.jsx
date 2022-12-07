@@ -9,7 +9,7 @@ const AroundYou = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://geo.ipify.org/api/v2/country?apiKey=at_LhNHg773hcTmRJzBgQYIXvZFoy9LN')
+        axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${process.env.VITE_GEO_API_KEY}`)
             .then((res) => setLocation(res.data.location))
             .catch((error) => console.log(error))
             .finally(setLoading(false))
