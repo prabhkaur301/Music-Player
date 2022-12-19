@@ -26,9 +26,9 @@ const App = () => {
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
           </div>
-          <div className={`xl:sticky relative top-0  xl:w-1/3 lg:h-full h-fit lg:overflow-y-scroll hide-scrollbar lg:pb-28`}>
+          {/* <div className={`xl:sticky relative top-0  xl:w-1/3 lg:h-full h-fit lg:overflow-y-scroll hide-scrollbar lg:pb-28`}>
             <TopPlay />
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -24,7 +24,7 @@ const TopChartCard = ({ song, idx, isPlaying, activeSong, handlePauseClick, hand
             <p className='text-white font-bold text-base text-clip text-overflow-hidden '>{song?.title}</p>
           </Link>
           <p className='text-sm truncate text-gray-300 mt-1'>
-            <Link to={song?.artists ? `/artists/${song?.artists[0]?.adamid}` : '/top-artists'}>{song?.subtitle}</Link>
+            <Link to={song?.artists ? `/artists/${song?.actions[0]?.id}` : '/top-artists'}>{song?.subtitle}</Link>
           </p>
         </div>
       </div>
@@ -45,7 +45,8 @@ const TopPlay = () => {
   const refDiv = useRef(null);
   const { data } = useGetTopChartsQuery();
 
-  const topPlays = data?.slice(0, 5);
+  const topPlays = data?.slice(0, 6);
+  
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -110,7 +111,7 @@ const TopPlay = () => {
               key={song?.key}
               style={{ width: '25%', height: 'auto' }}
               className=' shadow-lg rounded-full animate-slideright'>
-              <Link to={`/artists/${song?.artists[0].adamid}`}>
+              <Link to={`/artists`}>
                 <img src={song?.images.background} alt="Artist Image"
                   className='rounded-full w-full object-cover' />
               </Link>
